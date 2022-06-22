@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Artículos</title>
+    <!-- Ícono -->
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="container">
+    <div class="row justify-content-center">
+        <h1 class="text-center mt-4 mb-4">CRUD API LARAVEL</h1>
+        <div class="col-md-4">
+            <form id="form_articulos">
+                <div class="form-group mb-3">
+                    <!-- <label for="articulo_id">ID</label> -->
+                    <input type="hidden" name="articulo_id" id="articulo_id" autocomplete="off" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="articulo_precio">Precio <span class="text-danger"><b>(*)</b></span></label>
+                    <input type="number" name="articulo_precio" id="articulo_precio" min="0" step="0.05"
+                        class="form-control" autocomplete="off" placeholder="Ingrese el Precio" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="articulo_stock">Stock <span class="text-danger"><b>(*)</b></span></label>
+                    <input type="number" name="articulo_stock" id="articulo_stock" min="0" step="1" class="form-control"
+                        autocomplete="off" placeholder="Ingrese su correo" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="articulo_descripcion">Descripción <span class="text-danger"><b>(*)</b></span></label>
+                    <textarea name="articulo_descripcion" id="articulo_descripcion" class="form-control"
+                        autocomplete="off" placeholder="Ingrese la Descripción" rows="5"></textarea>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="submit" id="btn_enviar" value="Guardar" class="btn btn-primary" />
+                    <button type="submit" id="btn_limpiar" class="btn btn-warning">Limpiar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8 table-responsive">
+            <table id="tabla_articulos" class="table table-bordered table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Descripción</th>
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_articulos">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Js Extras -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
